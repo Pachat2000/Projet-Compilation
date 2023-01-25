@@ -1,0 +1,2 @@
+int mom = 10 + 2;
+return mom;

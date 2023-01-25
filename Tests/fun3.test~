@@ -1,0 +1,8 @@
+void Say_1(){
+     puts("Pls say 1\n");
+     int reponse = geti();
+     while(reponse != 1){
+     	puts("Come on ! it's not even difficult !\n sAY IT !");
+	reponse = geti();
+     }
+}

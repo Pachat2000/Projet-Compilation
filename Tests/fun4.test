@@ -1,0 +1,22 @@
+void afficher_grille(int c, int l){
+     int svg = l;
+     while(c != 0){
+     	 while(l != 0){
+	 	 puts("| 0 ");
+		 l = l - 1;
+	 }
+	 puts("\n");
+	 l = svg;
+	 c = c - 1;
+     }
+     puts("\n");
+}
+
+int main(){
+    puts("Dit moi le nombre de Colonne de ta grille\n");
+    int reponse1 = geti();
+    puts("Dit moi le nombre de ligne de ta grille\n");
+    int reponse2 = geti(); 
+    afficher_grille(reponse1, reponse2);
+    return 0;
+}

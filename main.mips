@@ -1,0 +1,128 @@
+.text
+.globl main
+_mul:
+  lw $t0, 0($sp)
+  lw $t1, 4($sp)
+  mul $v0, $t0, $t1
+  jr $ra
+_puti:
+  lw $a0, 0($sp)
+  li $v0, 1
+  syscall
+  jr $ra
+_geti:
+  lw $a0, 0($sp)
+  li $v0, 5
+  syscall
+  jr $ra
+_puts:
+  lw $a0, 0($sp)
+  li $v0, 4
+  syscall
+  jr $ra
+_equ:
+  lw $t0, 0($sp)
+  lw $t1, 4($sp)
+  seq $v0, $t0, $t1
+  jr $ra
+_sge:
+  lw $t0, 0($sp)
+  lw $t1, 4($sp)
+  sge $v0, $t1, $t0
+  jr $ra
+_sgt:
+  lw $t0, 0($sp)
+  lw $t1, 4($sp)
+  sgt $v0, $t1, $t0
+  jr $ra
+_sle:
+  lw $t0, 0($sp)
+  lw $t1, 4($sp)
+  sle $v0, $t1, $t0
+  jr $ra
+_slt:
+  lw $t0, 0($sp)
+  lw $t1, 4($sp)
+  slt $v0, $t1, $t0
+  jr $ra
+_sne:
+  lw $t0, 0($sp)
+  lw $t1, 4($sp)
+  sne $v0, $t1, $t0
+  jr $ra
+_add:
+  lw $t0, 0($sp)
+  lw $t1, 4($sp)
+  add $v0, $t0, $t1
+  jr $ra
+_div:
+  lw $t1, 0($sp)
+  lw $t0, 4($sp)
+  div $v0, $t0, $t1
+  jr $ra
+_sub:
+  lw $t1, 0($sp)
+  lw $t0, 4($sp)
+  sub $v0, $t0, $t1
+  jr $ra
+_abs:
+  lw $t0, 0($sp)
+  abs $v0, $t0
+  jr $ra
+_and:
+  lw $t0, 0($sp)
+  lw $t1, 4($sp)
+  and $v0, $t0, $t1
+  jr $ra
+_or:
+  lw $t0, 0($sp)
+  lw $t1, 4($sp)
+  or $v0, $t0, $t1
+  jr $ra
+_not:
+  lw $t0, 0($sp)
+  not $v0, $t0 
+  jr $ra
+_neg:
+  lw $t0, 0($sp)
+  neg $v0, $t0
+  jr $ra
+printa:
+  addi $sp, $sp, -8
+  sw $ra, 4($sp)
+  sw $fp, 0($sp)
+  addi $fp, $sp, 4
+  lw $v0, 4($fp)
+  addi $sp, $sp, -4
+  sw $v0, 0($sp)
+  jal _puti
+  addi $sp, $sp, 4
+  la $v0, str1
+  addi $sp, $sp, -4
+  sw $v0, 0($sp)
+  jal _puts
+  addi $sp, $sp, 4
+ret0:
+  addi $sp, $sp, 8
+  lw $ra, 0($fp)
+  lw $fp, -4($fp)
+  jr $ra
+main:
+  addi $sp, $sp, -8
+  sw $ra, 4($sp)
+  sw $fp, 0($sp)
+  addi $fp, $sp, 4
+  li $v0, 10
+  addi $sp, $sp, -4
+  sw $v0, 0($sp)
+  jal printa
+  addi $sp, $sp, 4
+ret1:
+  addi $sp, $sp, 8
+  lw $ra, 0($fp)
+  lw $fp, -4($fp)
+  jr $ra
+
+.data
+str1: .asciiz "
+"

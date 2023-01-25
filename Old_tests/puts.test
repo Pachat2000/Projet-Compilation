@@ -1,0 +1,4 @@
+str b = |Hello |;
+str v = |Word|;
+puts(b);
+puts(v);

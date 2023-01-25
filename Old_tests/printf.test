@@ -1,0 +1,3 @@
+int a = 12;
+puti(a);
+return 11000;

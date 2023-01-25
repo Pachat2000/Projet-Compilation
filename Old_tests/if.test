@@ -1,0 +1,13 @@
+int a = 10;
+int b = 12;
+int c = 13;
+int d = 14;
+if(false){
+  if(false){
+   return a; 
+  }
+  else{
+   return d;	
+  }
+}
+return c;

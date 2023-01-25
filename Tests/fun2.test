@@ -1,0 +1,17 @@
+int fibonacci(int n){
+     if(n <= 1){
+     	  return n;
+     }
+     else{
+	return (fibonacci(n - 1) + fibonacci(n - 2));
+     }
+}
+
+int main(){
+    puts("Entrer un nombre et je ressort son fibonacci\n");
+    int reponse = geti();
+    puts("Le résulta est = ");	
+    puti(fibonacci(reponse));
+    puts("\n");
+    return 0;
+}

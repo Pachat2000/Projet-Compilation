@@ -1,0 +1,9 @@
+str a = |HowMany|;
+int b  = 0;
+int reponse;
+puts(a);
+reponse = geti();
+while(b < reponse){
+  puti(b);
+  b = b + 1;
+}

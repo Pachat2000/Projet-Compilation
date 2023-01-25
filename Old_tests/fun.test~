@@ -1,0 +1,10 @@
+str bebou (int v, str b){
+    v = v + 30;
+    return b;    
+}
+
+int main(){
+     int a = 2;
+     puts("Hello World \n");
+     return 0;
+}

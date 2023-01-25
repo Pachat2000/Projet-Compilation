@@ -1,0 +1,8 @@
+void printa(int a){
+     puti(a);
+     puts("\n");
+}
+
+int main(){
+
+}

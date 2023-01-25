@@ -1,0 +1,4 @@
+int deef =  21;
+int doo;
+doo =  23;
+return doo;
